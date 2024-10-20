@@ -70,35 +70,35 @@ Before deploying the application, ensure the following:
    kubectl apply -f voting.yml
 
 2. **Verify Deployments**:
-Check the status of your deployments to ensure everything is running properly:
-```bash
-kubectl get pods
-kubectl get services
+   Check the status of your deployments to ensure everything is running properly:
+   ```bash
+   kubectl get pods
+   kubectl get services
 
 ### 4. Configure DNS with AWS Route 53
 
 1. **Retrieve the External IP**:
-Get the external IP address of the NGINX Ingress controller:
-```bash
-kubectl get svc -n ingress-nginx
+   Get the external IP address of the NGINX Ingress controller:
+   ```bash
+   kubectl get svc -n ingress-nginx
 
 2. **Create DNS Records in Route 53**:
-In the AWS Route 53 console, create A records pointing to the external IP of the Ingress controller for the following domains:
-```bash
-vote.example.com
-results.example.com
+   In the AWS Route 53 console, create A records pointing to the external IP of the Ingress controller for the following domains:
+   ```bash
+   vote.example.com
+   results.example.com
 
 ### 5. Monitor and Scale the Application
 1. **Monitor Application Status**:
-Keep track of your running services and pods:
-```bash
-kubectl get pods
-kubectl get services
+   Keep track of your running services and pods:
+   ```bash
+   kubectl get pods
+   kubectl get services
 
 2. **Check Logs for Issue**:
-If a service fails, check the logs to diagnose the issue:
-```bash
-kubectl logs <pod-name>
+   If a service fails, check the logs to diagnose the issue:
+   ```bash
+   kubectl logs <pod-name>
 
 ### Conclusion
     This deployment showcases the integration of modern DevOps practices, such as containerization, orchestration with Kubernetes, secure communication using SSL, and cloud-native services on AWS. The use of Kubernetes Secrets ensures secure handling of sensitive data, while Horizontal Pod Autoscaling ensures the application scales seamlessly with demand.

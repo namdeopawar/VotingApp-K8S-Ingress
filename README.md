@@ -10,7 +10,6 @@ The application architecture includes:
 - **Dockerized Microservices**: The application is composed of several services (Voting app, Results app, Redis, PostgreSQL) packaged as Docker containers.
 - **AWS Route 53**: Used for DNS management to resolve domain names to the Kubernetes Ingress endpoint.
 - **Kubernetes Secrets**: Protects sensitive information such as Docker credentials and SSL certificates.
-- **Horizontal Pod Autoscaling (HPA)**: Automatically scales the application based on traffic and resource usage.
 
 ## Prerequisites
 
@@ -101,7 +100,7 @@ Before deploying the application, ensure the following:
    kubectl logs <pod-name>
 
 ### Conclusion
-    This deployment showcases the integration of modern DevOps practices, such as containerization, orchestration with Kubernetes, secure communication using SSL, and cloud-native services on AWS. The use of Kubernetes Secrets ensures secure handling of sensitive data, while Horizontal Pod Autoscaling ensures the application scales seamlessly with demand.
+   This deployment showcases the integration of modern DevOps practices, such as containerization, orchestration with Kubernetes, secure communication using SSL, and cloud-native services on AWS. The use of Kubernetes Secrets ensures secure handling of sensitive data, while Horizontal Pod Autoscaling ensures the application scales seamlessly with demand.
 
 ### Repository
    Check out the repository for this project here.

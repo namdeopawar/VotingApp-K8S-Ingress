@@ -1,0 +1,62 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: result-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    spec.ingressClassName: nginx
+spec:
+  tls:
+  - hosts:
+    - "result.namacloudops.in"
+    secretName: nginx-tls-default
+  rules:
+  - host: result.namacloudops.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: result
+            port:
+              number: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vote-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    spec.ingressClassName: nginx
+spec:
+  tls:
+  - hosts:
+    - "vote.namacloudops.in"
+    - "www.namacloudops.in"
+    secretName: nginx-tls-default
+  rules:
+  - host: vote.namacloudops.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: vote
+            port:
+              number: 80
+  - host: www.namacloudops.in
+    http: 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: vote
+            port:
+              number: 80
+
+---

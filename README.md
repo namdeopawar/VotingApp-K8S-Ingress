@@ -53,14 +53,14 @@ This guide will help you set up Ingress Controllers, generate SSL keys, deploy I
       ```
     - Create the necessary secrets:
       ```sh
-      kubectl create secret docker-registry docker-pwd --docker-username=<your-username> --docker-password=<your-password> --docker-email=<your-email>
+      kubectl create secret docker-registry docker-creds --docker-username=<your-username> --docker-password=<your-password> --docker-email=<your-email>
       ```
 
 6. **Update YAML Manifest**
     - Add `imagePullSecrets` under the images section in your YAML manifest:
       ```yaml
       imagePullSecrets:
-        - name: docker-pwd
+        - name: docker-creds
       ```
 
 7. **Configure Route 53**
@@ -98,7 +98,7 @@ docker rmi $(docker images -aq) --force
 kubectl delete deployment <your-deployment-name>
 
 # Create Docker registry secret
-kubectl create secret docker-registry docker-pwd --docker-username=<your-username> --docker-password=<your-password> --docker-email=<your-email>
+kubectl create secret docker-registry docker-creds --docker-username=<your-username> --docker-password=<your-password> --docker-email=<your-email>
 ```
 
 

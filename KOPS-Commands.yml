@@ -1,8 +1,10 @@
-DNS NAME
-S3 BUCKET 
-IAM ROLE AND ASSIGN IT TO EC2 
-CREATE A EC2 INSTANCE AND GENERATE SSH ROLE
-download Kops and Kubectl to usr/local/bin and change permissions.
+Setup Required
+
+  DNS NAME - namacloudops.in
+  S3 BUCKET - namacloudops.in 
+  IAM ROLE AND ASSIGN IT TO EC2 - Management-Server
+  CREATE A EC2 INSTANCE AND GENERATE SSH ROLE
+  download Kops and Kubectl to usr/local/bin and change permissions.
 
 # Download Kubectl and give permissions.
 # edit .bashrc and add all the env variables 
